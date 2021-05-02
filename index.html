@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+    <head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-46FSVLQG88"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-46FSVLQG88');
+		</script>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Sitio de la Escuela de Agricultura y Sacarotecnia" />
+        <meta name="author" content="E.A.S U.N.T" />
+        <title>Escuela de Agricultura y Sacarotecnia</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />      
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />        
+        <link href="css/styles.css" rel="stylesheet" />		
+		
+        <script type="text/javascript">
+		
+               
+        function enviarMensaje()
+        {
+            document.getElementById("label_button").innerHTML="ENVIANDO...";
+            document.getElementById("boton_enviar").disabled=true;
+            if(document.getElementById("nombre").value==""){
+                        document.getElementById("label_button").innerHTML="ENVIAR MENSAJE";
+                        document.getElementById("boton_enviar").disabled=false;
+                        alert("Debe escribir su nombre"); 
+                        document.getElementById('nombre').focus(); 
+                        return 0; 
+                    }
+            if(document.getElementById("email").value==""){
+                        document.getElementById("label_button").innerHTML="ENVIAR MENSAJE";
+                        document.getElementById("boton_enviar").disabled=false;
+                        alert("Debe escribir su email"); 
+                        document.getElementById('email').focus(); 
+                        return 0; 
+                    }
+            if(document.getElementById("telefono").value==""){
+                        document.getElementById("label_button").innerHTML="ENVIAR MENSAJE";
+                        document.getElementById("boton_enviar").disabled=false;
+                        alert("Debe escribir su telefono"); 
+                        document.getElementById('telefono').focus(); 
+                        return 0; 
+                    }
+            if(document.getElementById("mensaje").value==""){
+                        document.getElementById("label_button").innerHTML="ENVIAR MENSAJE";
+                        document.getElementById("boton_enviar").disabled=false;
+                        alert("Debe escribir su mensaje"); 
+                        document.getElementById('mensaje').focus(); 
+                        return 0; 
+                    }
+            var nombre = document.getElementById("nombre").value;
+            var email = document.getElementById("email").value;
+            var telefono = document.getElementById("telefono").value;
+            var mensaje = document.getElementById("mensaje").value;
+            var xmlhttp;
+            if (window.XMLHttpRequest)
+            {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+            }
+            else
+            {// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function()
+            {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                document.getElementById("label_button").innerHTML="ENVIAR MENSAJE";
+                document.getElementById("boton_enviar").disabled=false;
+                alert("Mensaje Enviado correctamente. Muchas gracias");
+                }
+            }
+            xmlhttp.open("POST","enviar_email.php",true);
+            xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            xmlhttp.send("nombre="+nombre+"&email="+email+"&telefono="+telefono+"&mensaje="+mensaje);
+            }
+        </script>
+    </head>
+
+    <body id="page-top">
+        
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top"><img loading="lazy" src="assets/img/logoUNT.png" alt="U.N.T" /> <img loading="lazy" src="assets/img/logoEAS.png" alt="E.A.S" /> E.A.S</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars ml-1"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Nuestra Escuela</a></li>                        
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#publicaciones">Publicaciones</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#noticias">Redes Sociales</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Historia</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Autoridades</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading"><br><br><br><br></div>
+                <div class="masthead-heading text-uppercase"><br><br><br><br><br></div>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#portfolio">Nuestra Escuela</a>
+            </div>
+        </header>
+        
+        <section class="page-section bg-light" id="portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Nuestra Escuela</h2>
+                    <h3 class="section-subheading text-muted">Actividades que realiza la <br> Escuela de Agricultura y Sacarotécnia</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" href="https://bit.ly/sistemaEAS"
+                            ><div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img loading="lazy"class="img-fluid" src="assets/img/portfolio/03-thumbnail.jpg" alt=""
+                        /></a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Sistema de <br> Gestión Académica</div>
+                            <div class="portfolio-caption-subheading text-muted">Acceso al Sistema </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" href="./cronograma.html">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img loading="lazy"class="img-fluid" src="assets/img/portfolio/07-clasesVirtuales.jpg" alt="imagen de clases virtuales"
+                        /></a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Clases Virtuales<br></div>
+                            <div class="portfolio-caption-subheading text-muted"><br>Enlaces y horarios de clases virtuales.</div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" href="https://campusvirtualunt.net/course/index.php?categoryid=142"
+                                ><div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img loading="lazy"class="img-fluid" src="assets/img/portfolio/01-thumbnail.jpg" alt=""
+                            /></a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Especialización <br> Agropecuaria</div>
+                                <div class="portfolio-caption-subheading text-muted">Trayecto de formación en <br> producción agropecuaria.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" href="https://campusvirtualunt.net/course/index.php?categoryid=137"
+                            ><div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img loading="lazy"class="img-fluid" src="assets/img/portfolio/09-basico.jpg" alt=""
+                            /></a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Ciclo de Orientación</div>
+                                <div class="portfolio-caption-subheading text-muted"> <br> Instrucción general y proyectos relacionados con la actividad agropecuaria y agroindustrial</div>
+                            </div>
+                        </div>
+                    </div>                    
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" href="https://campusvirtualunt.net/course/index.php?categoryid=143"
+                            ><div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img loading="lazy"class="img-fluid" src="assets/img/portfolio/02-thumbnail.jpg" alt=""
+                            /></a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Especialización <br> Químico Agroindustrial</div>
+                                <div class="portfolio-caption-subheading text-muted">Trayecto de formación en <br> control agroindustrial.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                           
+     </section>
+        
+        
+        <section class="page-section" id="publicaciones">            
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase"><a href="https://escuelaeas.blogspot.com/">Publicaciones</a></h2>
+                    <h3 class="section-subheading text-muted">Visitá nuestro blog</h3>
+                </div>
+                <div class="row justify-content-center">  
+                    <div class="embed-responsive embed-responsive-1by1">
+                        <iframe class="embed-responsive-item" src="https://escuelaeas.blogspot.com/" loading="lazy"></iframe>
+                    </div>
+                </div>       
+            </div>
+        </section>
+
+         
+         <section class="page-section bg-light" id="noticias">
+             <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Redes Sociales</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+                <div class="row justify-content-center">                    
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CAnm7hklybA/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="12" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/CAnm7hklybA/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;"> Ver esta publicación en Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/CAnm7hklybA/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Una publicación compartida por Escuela de Agricultura (@escueladeagricultura)</a> el <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2020-05-25T17:16:02+00:00">25 de May de 2020 a las 10:16 PDT</time></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
+                </div>        
+            </div>
+        </section>
+
+        
+        <section class="page-section" id="about">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Historia</h2>
+                    <h3 class="section-subheading text-muted">Una breve reseña de nuestra Institución</h3>
+                </div>
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image"><img loading="lazy"class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>28 de septiembre de 1870</h4>
+                                <h4 class="subheading">Nuestra fundación</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Mediante la sanción de la Ley 4321​, decretada por el entonces presidente Domingo Faustino Sarmiento como Departamento de Agronomía dependiente del Colegio Nacional de Tucumán</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img loading="lazy"class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>3 de marzo de 1905</h4>
+                                <h4 class="subheading">Escuela de Agricultura y Forestal</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Este hito es protagonizado por el Diputado Nacional por Tucumán, el Sr. Federico Helguera Molina, quien presentó a la Cámara de Diputados de la Nación un proyecto de ley para la creación de una Escuela Elemental de Agricultura, sobre la base de la Quinta Agronómica.</p></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"><img loading="lazy"class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>21 de marzo de 1907</h4>
+                                <h4 class="subheading">Escuela de Arboricultura y Sacarotecnia</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">El Decreto Nacional de la fecha, determina el cambio de nombre de la institución que otorgaba el título de Perito Arboricultor y Sacarotécnico. Estaba ubicada en las calles Moreno y Gral. Paz, donde actualmente funciona la Escuela Provincial Bernardo de Monteagudo.</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img loading="lazy"class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>8 de octubre de 1929</h4>
+                                <h4 class="subheading">Escuela de Agricultura y Sacarotecnia</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">La Escuela deja de depender del Ministerio de Agricultura de la Nación para incorporarse por Decreto del Poder Ejecutivo Nacional, a la Universidad Nacional de Tucumán.</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <h4><br />Presente<br /></h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+         
+         <section class="page-section bg-light" id="team">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Autoridades</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="team-member">
+                            <h4>Ing. Justo Casimiro <br>Fernández</h4>
+                            <p class="text-muted">Director</p>      
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="team-member">
+
+                            <h4>Ing. Susana del Valle <br> Posse</h4>
+                            <p class="text-muted">Vice Directora</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="team-member">
+                            <h4>Lic. Juan Gustavo <br> Namen</h4>
+                            <p class="text-muted">Regente</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="team-member">
+                            <h4>Sra. Silvana Karina <br> Olea</h4>
+                            <p class="text-muted">Secretaria</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Contacto</h2>
+                    <h3 class="section-subheading text-muted">Puedes dejarnos cualquier duda o sugerencia.
+					</h3>
+                </div>
+                <form id="contactForm" name="sentMessage" >
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" name="nombre" id="nombre" type="text" placeholder="Nombre *" required="required" data-validation-required-message="Por favor, ingrese su nombre" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="email" id="email" placeholder="Correo *" required="required" data-validation-required-message="Por favor, ingrese su dirección de correo." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group mb-md-0">
+                                <input class="form-control" name="telefono" id="telefono" type="tel" placeholder="Teléfono *" required="required" data-validation-required-message="Por favor, ingrese su número de teléfono." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                <textarea class="form-control" name="mensaje" id="mensaje" placeholder="Mensaje *" required="required" data-validation-required-message="Por favor, ingrese su mensaje."></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div id="success"></div>
+                        <button class="btn btn-primary btn-xl text-uppercase" id="boton_enviar" 
+						onClick="enviarMensaje();" ><label id="label_button">Enviar Mensaje</label></button>
+                    </div>
+				
+                </form>
+            </div>
+        </section>
+
+        
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-left"><br>Escuela de Agricultura y Sacarotecnia  <br> Correo: eas@eas.unt.edu.ar <br> Teléfonos: (0381) 4253467 - 4254424 - 4257151 <br></div>
+                <div class="col-lg-4 text-lg-center">
+                        <a class="mr-3" href="https://www.google.com.ar/maps/place/Escuela+de+Agricultura+y+Sacarot%C3%A9cnia+-+UNT/@-26.7802151,-65.3254093,524m/data=!3m1!1e3!4m5!3m4!1s0x9422428259e6af31:0xbf8a7260157348c5!8m2!3d-26.7794652!4d-65.3242564?hl=es"><br>Horco Molle, Yerba Buena <br> Tucumán <br> República Argentina  </a>
+                    </div>
+                <div class="col-lg-4 text-lg-right">
+                        <a class="mr-3" href="http://www.escuelasunt.com.ar/"><br>Consejo de Escuelas Experimentales<br></a>
+                        <a class="mr-3" href="http://www.unt.edu.ar/">Universidad Nacional de Tucumán</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>        
+        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>
+        <script src="js/scripts.js"></script>
+		
+		
+		
+    </body>
+	
+</html>
