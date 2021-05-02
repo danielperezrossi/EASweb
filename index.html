@@ -21,68 +21,67 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />        
         <link href="css/styles.css" rel="stylesheet" />		
 		
-        <script type="text/javascript">
-		
-               
-        function enviarMensaje()
-        {
-            document.getElementById("label_button").innerHTML="ENVIANDO...";
-            document.getElementById("boton_enviar").disabled=true;
-            if(document.getElementById("nombre").value==""){
-                        document.getElementById("label_button").innerHTML="ENVIAR MENSAJE";
-                        document.getElementById("boton_enviar").disabled=false;
-                        alert("Debe escribir su nombre"); 
-                        document.getElementById('nombre').focus(); 
-                        return 0; 
-                    }
-            if(document.getElementById("email").value==""){
-                        document.getElementById("label_button").innerHTML="ENVIAR MENSAJE";
-                        document.getElementById("boton_enviar").disabled=false;
-                        alert("Debe escribir su email"); 
-                        document.getElementById('email').focus(); 
-                        return 0; 
-                    }
-            if(document.getElementById("telefono").value==""){
-                        document.getElementById("label_button").innerHTML="ENVIAR MENSAJE";
-                        document.getElementById("boton_enviar").disabled=false;
-                        alert("Debe escribir su telefono"); 
-                        document.getElementById('telefono').focus(); 
-                        return 0; 
-                    }
-            if(document.getElementById("mensaje").value==""){
-                        document.getElementById("label_button").innerHTML="ENVIAR MENSAJE";
-                        document.getElementById("boton_enviar").disabled=false;
-                        alert("Debe escribir su mensaje"); 
-                        document.getElementById('mensaje').focus(); 
-                        return 0; 
-                    }
-            var nombre = document.getElementById("nombre").value;
-            var email = document.getElementById("email").value;
-            var telefono = document.getElementById("telefono").value;
-            var mensaje = document.getElementById("mensaje").value;
-            var xmlhttp;
-            if (window.XMLHttpRequest)
-            {// code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp=new XMLHttpRequest();
-            }
-            else
-            {// code for IE6, IE5
-            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange=function()
+        <script type="text/javascript">               
+            function enviarMensaje()
             {
-            if (xmlhttp.readyState==4 && xmlhttp.status==200)
-                {
-                document.getElementById("label_button").innerHTML="ENVIAR MENSAJE";
-                document.getElementById("boton_enviar").disabled=false;
-                alert("Mensaje Enviado correctamente. Muchas gracias");
+                document.getElementById("label_button").innerHTML="ENVIANDO...";
+                document.getElementById("boton_enviar").disabled=true;
+                if(document.getElementById("nombre").value==""){
+                            document.getElementById("label_button").innerHTML="ENVIAR MENSAJE";
+                            document.getElementById("boton_enviar").disabled=false;
+                            alert("Debe escribir su nombre"); 
+                            document.getElementById('nombre').focus(); 
+                            return 0; 
+                        }
+                if(document.getElementById("email").value==""){
+                            document.getElementById("label_button").innerHTML="ENVIAR MENSAJE";
+                            document.getElementById("boton_enviar").disabled=false;
+                            alert("Debe escribir su email"); 
+                            document.getElementById('email').focus(); 
+                            return 0; 
+                        }
+                if(document.getElementById("telefono").value==""){
+                            document.getElementById("label_button").innerHTML="ENVIAR MENSAJE";
+                            document.getElementById("boton_enviar").disabled=false;
+                            alert("Debe escribir su telefono"); 
+                            document.getElementById('telefono').focus(); 
+                            return 0; 
+                        }
+                if(document.getElementById("mensaje").value==""){
+                            document.getElementById("label_button").innerHTML="ENVIAR MENSAJE";
+                            document.getElementById("boton_enviar").disabled=false;
+                            alert("Debe escribir su mensaje"); 
+                            document.getElementById('mensaje').focus(); 
+                            return 0; 
+                        }
+                var nombre = document.getElementById("nombre").value;
+                var email = document.getElementById("email").value;
+                var telefono = document.getElementById("telefono").value;
+                var mensaje = document.getElementById("mensaje").value;
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp=new XMLHttpRequest();
                 }
-            }
-            xmlhttp.open("POST","enviar_email.php",true);
-            xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-            xmlhttp.send("nombre="+nombre+"&email="+email+"&telefono="+telefono+"&mensaje="+mensaje);
-            }
+                else
+                {// code for IE6, IE5
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                    {
+                    document.getElementById("label_button").innerHTML="ENVIAR MENSAJE";
+                    document.getElementById("boton_enviar").disabled=false;
+                    alert("Mensaje Enviado correctamente. Muchas gracias");
+                    }
+                }
+                xmlhttp.open("POST","enviar_email.php",true);
+                xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                xmlhttp.send("nombre="+nombre+"&email="+email+"&telefono="+telefono+"&mensaje="+mensaje);
+                }
         </script>
+        
     </head>
 
     <body id="page-top">
